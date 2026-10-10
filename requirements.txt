@@ -5,3 +5,6 @@ scikit-learn
 xgboost
 lightgbm
 joblib
+plotly
+shap
+matplotlib
