@@ -65,7 +65,7 @@ def load_model():
 
     # --- TỰ ĐỘNG HUẤN LUYỆN DỰ PHÒNG TRÊN STREAMLIT CLOUD NẾU LỆCH PYTHON ---
 df_raw = pd.read_csv("diabetic_data.csv", na_values=['?', ''], keep_default_na=False, low_memory=False)
-    dead_ids = [11, 13, 14, 19, 20, 21]
+dead_ids = [11, 13, 14, 19, 20, 21]
     df_cls = df_raw[~df_raw['discharge_disposition_id'].isin(dead_ids)].copy()
     df_cls = df_cls[df_cls['gender'] != 'Unknown/Invalid'].copy()
     df_cls['event'] = np.where(df_cls['readmitted'] == '<30', 1, 0)
